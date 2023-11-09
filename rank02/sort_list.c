@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 21:40:06 by seblin            #+#    #+#             */
-/*   Updated: 2023/11/08 22:44:52 by seblin           ###   ########.fr       */
+/*   Updated: 2023/11/09 07:44:31 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int ascending(int a, int b)
 
 int descending(int a, int b)
 {
-	return (a <= b);
+	return (a >= b);
 }
 
 void	swap(int *a, int *b)
@@ -34,15 +34,15 @@ void	swap(int *a, int *b)
 	*a = *b;
 	*b = tmp;	
 }
-#include <unistd.h>
+
 t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 {
 	t_list *tmp;
 	
 	tmp = lst;
 	while (tmp->next)
-	{write(1, "1", 1);
-		if (cmp(tmp->data, tmp->next->data))
+	{
+		if (!cmp(tmp->data, tmp->next->data))
 		{
 			swap(&tmp->data, &tmp->next->data);
 			tmp = lst;
@@ -52,6 +52,7 @@ t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 	}
 	return (lst);
 }
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -74,7 +75,7 @@ int	main(void)
 	link[6].data = 0;
 	link[7].data = 299;
 	head = &link[0];
-	sort_list(head, ascending);
+	sort_list(head, descending);
 	while (head)
 	{
 		printf("%d ", head->data);
