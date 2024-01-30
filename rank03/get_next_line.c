@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:47:28 by seblin            #+#    #+#             */
-/*   Updated: 2024/01/29 15:33:50 by seblin           ###   ########.fr       */
+/*   Updated: 2024/01/30 10:15:00 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ char *get_next_line(int fd)
 		ft_init(buffer);
 		buffer_sav = buffer;
 	}
-	new_line = search_nl(buffer); // printf("buffer: %d", new_line);
+	new_line = search_nl(buffer);
 	while (new_line == -1)
 	{	
 		ft_init(new_buff);	
@@ -140,12 +140,8 @@ char *get_next_line(int fd)
 			return (NULL);
 		}		
 	}
-	//printf("buffer: %s\n", buffer);
-	//printf("break %d",  search_nl(buffer));
 	line = ft_strndup(buffer, search_nl(buffer) + 1);
-//	printf("line: %s\n", line);
 	buffer += search_nl(buffer) + 1;
-	//printf("line: %s\n", line);
 	return (line);	
 }
 // #include <stdio.h>
