@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   microshell.c                                       :+:      :+:    :+:   */
+/*   microshell_0.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:28:00 by seblin            #+#    #+#             */
-/*   Updated: 2024/04/16 09:43:45 by seblin           ###   ########.fr       */
+/*   Updated: 2024/04/16 12:49:34 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ int	nurcery(char *argv[], char *envp[])
 			{
 				state = display_error("error: fatal\n");
 				continue ;
-			}			
-		}	
+			}
+		}
 		if (*cmd_start != *cmd_end && strcmp(*cmd_start, "cd"))
 		{			
 			pid = fork();
