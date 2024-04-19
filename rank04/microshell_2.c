@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   microshell.c                                       :+:      :+:    :+:   */
+/*   microshell_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:57:19 by seblin            #+#    #+#             */
-/*   Updated: 2024/04/16 22:03:22 by seblin           ###   ########.fr       */
+/*   Updated: 2024/04/19 20:19:19 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	set_pipe(int pipe_fd[], int i)
 
 int	child(char *cmd[], char *cmd_end[], int pipe_fd[], char *envp[])
 {
-	if (*pipe_fd && set_pipe(pipe_fd, 1) < 0)
+	if (*pipe_fd && set_pipe(pipe_fd, 1))
 		return (1);
 	*cmd_end = 0;
 	execve(*cmd, cmd, envp);
@@ -43,7 +43,7 @@ int	parent(pid_t pid, int pipe_fd[])
 {
 	int	state;
 	
-	if (*pipe_fd && set_pipe(pipe_fd, 0) < 0)
+	if (*pipe_fd && set_pipe(pipe_fd, 0))
 		return (1);
 	waitpid(pid, &state, 0);
 	return (WIFEXITED(state) && WEXITSTATUS(state));
