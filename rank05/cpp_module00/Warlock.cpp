@@ -6,7 +6,7 @@
 /*   By: svidot <svidot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:46:49 by svidot            #+#    #+#             */
-/*   Updated: 2024/08/19 14:17:28 by svidot           ###   ########.fr       */
+/*   Updated: 2024/08/19 15:31:53 by svidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Warlock::Warlock( const Warlock & src )
     return ;
 }
 
-Warlock::Warlock( std::string _name, std::string _title )
+Warlock::Warlock( const std::string & _name, const std::string & _title )
     :name(_name), title(_title)
 {
     std::cout << this->name << ": This looks like another boring day." 
@@ -61,5 +61,5 @@ void Warlock::setTitle( const std::string & _title )
 void Warlock::introduce() const
 {
     std::cout << this->name << ": I am " << this->name << ", "
-        << this->name << "!" << std::endl;
+        << this->title << "!" << std::endl;
 }
