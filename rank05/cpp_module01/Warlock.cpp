@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Warlock.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svidot <svidot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:46:49 by svidot            #+#    #+#             */
-/*   Updated: 2024/08/19 15:31:53 by svidot           ###   ########.fr       */
+/*   Updated: 2024/08/20 11:21:40 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Warlock.hpp"
 
 Warlock::Warlock( void )
-{   
+{  	
     return ;
 }
 
@@ -28,6 +28,9 @@ Warlock::Warlock( const std::string & _name, const std::string & _title )
 {
     std::cout << this->name << ": This looks like another boring day." 
         << std::endl;
+	
+	for (int i = 0; i < SP; i++)	
+		this->spells[i] = NULL;
     return ;   
 }
   
@@ -40,6 +43,12 @@ Warlock & Warlock::operator=( const Warlock & rhs )
 Warlock::~Warlock( void )
 {
     std::cout << this->name << ": My job here is done!" << std::endl;
+
+	for (int i = 0; i < SP; i++)
+	{	
+		delete this->spells[i];
+		this->spells[i] = NULL;
+	}
     return ;
 }
 
@@ -62,4 +71,31 @@ void Warlock::introduce() const
 {
     std::cout << this->name << ": I am " << this->name << ", "
         << this->title << "!" << std::endl;
+}
+
+void  Warlock::learnSpell( ASpell * spell )
+{
+	for (int i = 0; i < SP; i++)
+		if (!this->spells[i])
+		{
+			this->spells[i] = spell;
+			break;	
+		}
+}
+
+void  Warlock::forgetSpell( const std::string & spell )
+{
+	for (int i = 0; i < SP; i++)
+		if (this->spells[i] && this->spells[i]->getName() == spell)
+		{
+			delete this->spells[i];
+			this->spells[i] = NULL;
+		}
+}
+
+void  Warlock::launchSpell( const std::string & spell, const ATarget & target )
+{
+	for (int i = 0; i < SP; i++)
+		if (this->spells[i] && this->spells[i]->getName() == spell)
+			target.getHitBySpell(*this->spells[i]);
 }
