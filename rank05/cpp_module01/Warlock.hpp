@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:46:51 by svidot            #+#    #+#             */
-/*   Updated: 2024/08/20 10:34:08 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/20 11:42:54 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ class Warlock
         void introduce() const;  
 
 		void learnSpell( ASpell * spell ); 
-		void forgetSpell( const std::string & spell );
-		void launchSpell( const std::string & spell, const ATarget & target );
+		void forgetSpell( std::string spell );
+		void launchSpell( std::string spell, const ATarget & target );
 };

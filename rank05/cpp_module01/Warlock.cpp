@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:46:49 by svidot            #+#    #+#             */
-/*   Updated: 2024/08/20 11:21:40 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/20 12:08:20 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ Warlock::~Warlock( void )
 {
     std::cout << this->name << ": My job here is done!" << std::endl;
 
-	for (int i = 0; i < SP; i++)
-	{	
-		delete this->spells[i];
-		this->spells[i] = NULL;
-	}
     return ;
 }
 
@@ -83,17 +78,14 @@ void  Warlock::learnSpell( ASpell * spell )
 		}
 }
 
-void  Warlock::forgetSpell( const std::string & spell )
+void  Warlock::forgetSpell( std::string spell )
 {
 	for (int i = 0; i < SP; i++)
-		if (this->spells[i] && this->spells[i]->getName() == spell)
-		{
-			delete this->spells[i];
-			this->spells[i] = NULL;
-		}
+		if (this->spells[i] && this->spells[i]->getName() == spell)		
+			this->spells[i] = NULL;		
 }
 
-void  Warlock::launchSpell( const std::string & spell, const ATarget & target )
+void  Warlock::launchSpell( std::string spell, const ATarget & target )
 {
 	for (int i = 0; i < SP; i++)
 		if (this->spells[i] && this->spells[i]->getName() == spell)

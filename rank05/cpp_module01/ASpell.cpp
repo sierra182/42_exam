@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:50:47 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/20 10:55:44 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/20 11:46:49 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ ASpell::ASpell( const std::string & _name, const std::string & _effects )
 	return ;
 }
 
-void ASpell::launch( const ATarget & target) const
+void ASpell::launch( const ATarget & target ) const
 {
-	target.getHitBySpell(const_cast<const ASpell &>(*this));
+	target.getHitBySpell(*this);
 }
 
