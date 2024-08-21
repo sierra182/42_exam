@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Warlock.hpp                                        :+:      :+:    :+:   */
+/*   Dummy.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 09:57:06 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/21 14:54:48 by seblin           ###   ########.fr       */
+/*   Created: 2024/08/21 14:09:57 by seblin            #+#    #+#             */
+/*   Updated: 2024/08/21 16:53:55 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
+#include "ATarget.hpp"
 
-class Warlock
-{	
-	std::string name;
-	std::string title;
-	
-	Warlock();
-	Warlock(const Warlock &);
-	Warlock & operator=(const Warlock &);
-	
+class Dummy : public ATarget
+{
 	public:
-
-	Warlock(const std::string & _name, const std::string & _title);	
-		
-	virtual ~Warlock();	
 	
-	const std::string & getName() const;
-	const std::string & getTitle() const;
-	void setTitle(const std::string & _title);
-	
-	void introduce() const;
+	Dummy();
+	virtual ~Dummy();
+	virtual ATarget * clone() const;
 };

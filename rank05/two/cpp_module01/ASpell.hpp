@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Warlock.hpp                                        :+:      :+:    :+:   */
+/*   ASpell.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 09:57:06 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/21 14:54:48 by seblin           ###   ########.fr       */
+/*   Created: 2024/08/21 11:54:30 by seblin            #+#    #+#             */
+/*   Updated: 2024/08/21 16:26:49 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 
-class Warlock
-{	
+class ATarget;
+class ASpell
+{
 	std::string name;
-	std::string title;
-	
-	Warlock();
-	Warlock(const Warlock &);
-	Warlock & operator=(const Warlock &);
+	std::string effects;
 	
 	public:
 
-	Warlock(const std::string & _name, const std::string & _title);	
-		
-	virtual ~Warlock();	
-	
+	ASpell();
+	ASpell( const ASpell & src );
+	ASpell & operator=( const ASpell & rhs );
+	virtual ~ASpell();
+
+	ASpell( const std::string & _name, const std::string & _effects );
 	const std::string & getName() const;
-	const std::string & getTitle() const;
-	void setTitle(const std::string & _title);
+	const std::string & getEffects() const;
 	
-	void introduce() const;
+	virtual ASpell * clone() const = 0;
+	void launch( const ATarget & target ) const;
 };
