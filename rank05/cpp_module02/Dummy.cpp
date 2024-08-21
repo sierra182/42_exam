@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:50:47 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/20 11:03:10 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 08:37:57 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ Dummy::~Dummy( void )
 
 ATarget * Dummy::clone( void ) const
 {
-	return new Dummy;
+	return new Dummy();
 }

@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:50:47 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/20 13:55:00 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 08:38:04 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ BrickWall::~BrickWall( void )
 
 ATarget * BrickWall::clone( void ) const
 {
-	return new BrickWall;
+	return new BrickWall();
 }

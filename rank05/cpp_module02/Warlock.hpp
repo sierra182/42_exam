@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:46:51 by svidot            #+#    #+#             */
-/*   Updated: 2024/08/20 17:44:58 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 08:05:43 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ class Warlock
 	SpellBook spBook;
 	
     Warlock( void );
+    Warlock( const Warlock & src );
+    Warlock & operator=( const Warlock & rhs );
         
     public :
-    Warlock( const Warlock & src );//
-    Warlock & operator=( const Warlock & rhs );//
         
         Warlock( const std::string & name, const std::string & title );
-        virtual ~Warlock( void );  
+        ~Warlock( void );  //! not virtual
            
         const std::string & getName() const;
         const std::string & getTitle() const;

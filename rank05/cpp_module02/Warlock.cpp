@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:46:49 by svidot            #+#    #+#             */
-/*   Updated: 2024/08/20 17:45:08 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 08:17:26 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ Warlock::Warlock( void )
     return ;
 }
 
-Warlock::Warlock( const Warlock & src )//!
-{
-    *this = src;
+Warlock::Warlock( const Warlock &)
+{  
     return ;
 }
 
@@ -34,15 +33,8 @@ Warlock::Warlock( const std::string & _name, const std::string & _title )
     return ;   
 }
   
-Warlock & Warlock::operator=( const Warlock & rhs )//!
-{
-    if (this != &rhs)
-	{
-		if (rhs.name != this->name)
-			rhs.name == this->name;
-		if (rhs.title != this->title)
-			rhs.title == this->title;
-	}
+Warlock & Warlock::operator=( const Warlock & )
+{   
     return *this;
 }
 
@@ -101,7 +93,9 @@ void  Warlock::launchSpell( std::string spell, const ATarget & target )
 	if (spell_tmp)
 	{
 		// std::cout << "HAVE SPELL" << std::endl;
-		target.getHitBySpell(*spell_tmp);		
+		// target.getHitBySpell(*spell_tmp);//!
+		spell_tmp->launch(target);
+		// delete spell_tmp;		
 	}
 	// else
 	// 	std::cout << "HAVE NOOO SPELL" << std::endl;

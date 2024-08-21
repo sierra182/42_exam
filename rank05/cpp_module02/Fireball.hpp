@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:47:26 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/20 13:32:49 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 07:28:27 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 class Fireball : public ASpell
 {
+		Fireball( const Fireball & );
+		Fireball & operator=( const Fireball & );
 	public:
 
 		Fireball( void );
-		Fireball( const Fireball & );
-		Fireball & operator=( const Fireball & );
 		virtual ~Fireball( void );
 
 		virtual ASpell * clone( void ) const;

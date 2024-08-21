@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:47:26 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/20 09:42:20 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 07:56:29 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class ASpell
 		virtual ASpell * clone( void ) const = 0;
 		void launch( const ATarget & target) const;
 
-	protected:
-
+	// protected://!
+	private:
 		std::string name;
 		std::string effects;
 };

@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:50:47 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/20 13:33:47 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 08:38:32 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ Fireball::~Fireball( void )
 
 ASpell * Fireball::clone( void ) const
 {
-	return new Fireball;
+	return new Fireball();
 }

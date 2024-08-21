@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:47:26 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/20 13:54:15 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 07:29:42 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 class BrickWall : public ATarget
 {
+		BrickWall( const BrickWall & );
+		BrickWall & operator=( const BrickWall & );
 	public:
 
 		BrickWall( void );
-		BrickWall( const BrickWall & );
-		BrickWall & operator=( const BrickWall & );
 		virtual ~BrickWall( void );
 
 		virtual ATarget * clone( void ) const;

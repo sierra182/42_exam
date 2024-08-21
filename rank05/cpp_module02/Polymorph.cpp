@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:50:47 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/20 13:34:33 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 08:37:45 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ Polymorph::~Polymorph( void )
 
 ASpell * Polymorph::clone( void ) const
 {
-	return new Polymorph;
+	return new Polymorph();//!()
 }

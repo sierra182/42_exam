@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:50:47 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/20 11:04:44 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 08:36:15 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ ATarget::ATarget( const ATarget & src )
 	return ;
 }
 
-ATarget & ATarget::operator=( const ATarget & )
+ATarget & ATarget::operator=( const ATarget & rhs)
 {	
+	this->type = rhs.type;
 	return *this;
 }
 
@@ -47,6 +48,6 @@ const std::string & ATarget::getType( void ) const
 
 void ATarget::getHitBySpell(const ASpell & spell) const
 {
-	std::cout << getType() << " has been " << spell.getEffects() << "!"
+	std::cout << this->getType() << " has been " << spell.getEffects() << "!"
 		<< std::endl;
 }

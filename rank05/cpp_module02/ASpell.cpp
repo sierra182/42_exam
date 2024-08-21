@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:50:47 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/20 16:26:52 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 08:34:06 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ ASpell::ASpell( const ASpell & src )
 	return ;
 }
 
-ASpell & ASpell::operator=( const ASpell & )
+ASpell & ASpell::operator=( const ASpell & rhs)
 {	
+	this->name = rhs.name;
+	this->effects = rhs.effects;
 	return *this;
 }
 

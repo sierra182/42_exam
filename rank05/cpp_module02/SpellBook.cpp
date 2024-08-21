@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:50:47 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/20 18:32:32 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 08:44:02 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ SpellBook::~SpellBook( void )
 {
 	for (int i = 0; i < SP; i++)
 	{		
-		// delete this->spells[i];
+		delete this->spells[i];
 		this->spells[i] = NULL;	
 	}
 	
@@ -46,14 +46,16 @@ SpellBook::~SpellBook( void )
 
 void SpellBook::learnSpell( ASpell* spell ) //cpy
 {
-	if (!spell)
-		std::cout << "FAUX" << std::endl;
+	// if (!spell)
+	// 	std::cout << "FAUX" << std::endl;
 	for (int i = 0; i < SP; i++)
-	if (!this->spells[i])
-	{
-		this->spells[i] = spell;//->clone();
-		break;	
-	}
+		if (!this->spells[i] && spell)
+		{
+			this->spells[i] = spell->clone();
+			// del spell ?
+			//  delete spell;//!
+			break;	
+		}
 }
 
 void SpellBook::forgetSpell(std::string const & spell) //del ?
@@ -61,7 +63,7 @@ void SpellBook::forgetSpell(std::string const & spell) //del ?
 	for (int i = 0; i < SP; i++)
 		if (this->spells[i] && this->spells[i]->getName() == spell)		
 		{
-			// delete this->spells[i];
+			delete this->spells[i];
 			this->spells[i] = NULL;	
 		}
 }
@@ -88,7 +90,7 @@ ASpell* SpellBook::createSpell(std::string const & spell)
 		if (this->spells[i] && this->spells[i]->getName() == spell)
 		{
 		// std::cout << "FINDED" << std::endl;
-			return this->spells[i]->clone();
+			return this->spells[i];//->clone();
 		}
 	}
 	// std::cout << "CREATE SPELL NULL" << std::endl;		

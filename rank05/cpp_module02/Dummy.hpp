@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:47:26 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/20 10:14:59 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 07:29:48 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 class Dummy : public ATarget
 {
+		Dummy( const Dummy & );
+		Dummy & operator=( const Dummy & );
 	public:
 
 		Dummy( void );
-		Dummy( const Dummy & );
-		Dummy & operator=( const Dummy & );
 		virtual ~Dummy( void );
 
 		virtual ATarget * clone( void ) const;
