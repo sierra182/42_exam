@@ -6,7 +6,7 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:46:51 by svidot            #+#    #+#             */
-/*   Updated: 2024/08/21 08:05:43 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 08:49:48 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "ASpell.hpp"
 #include "SpellBook.hpp"
 
-#define SP 100
+// #define SP 100
 
 class Warlock
 {        

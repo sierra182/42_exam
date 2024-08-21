@@ -6,14 +6,14 @@
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 17:47:26 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/20 14:20:23 by seblin           ###   ########.fr       */
+/*   Updated: 2024/08/21 08:58:15 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include "ASpell.hpp"
-#define SP 100
+#define SP 5
 
 class SpellBook
 {	
