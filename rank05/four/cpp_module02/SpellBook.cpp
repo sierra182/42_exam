@@ -5,39 +5,49 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 09:53:07 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/22 11:19:47 by seblin           ###   ########.fr       */
+/*   Created: 2024/08/23 17:58:28 by svidot            #+#    #+#             */
+/*   Updated: 2024/08/24 05:58:05 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SpellBook.hpp"
-#include <utility>
 
 SpellBook::SpellBook(){}
-SpellBook::SpellBook( const SpellBook & ){}
-SpellBook & SpellBook::operator=( const SpellBook & ){return *this;}
-
+SpellBook::SpellBook(const SpellBook &){}
+SpellBook & SpellBook::operator=(const SpellBook &){return *this;}
 
 SpellBook::~SpellBook()
 {
-
+    map<string, ASpell*>::iterator it = spl.begin();
+    for (; it != spl.end(); it++)    
+        delete it->second;      
+    spl.clear();          
 }
 
-void SpellBook::learnSpell( ASpell * spell )
+void SpellBook::learnSpell(ASpell * spell)
 {
 	if (spell)
-		this->spl.insert(make_pair(spell->getName(), spell));
+	{
+		map<string, ASpell*>::iterator it = spl.find(spell->getName());
+		if (spell && it == spl.end())
+			spl.insert(make_pair(spell->getName(), spell->clone()));		
+	}
 }
 
-void SpellBook::forgetSpell( const std::string & spell )
+void SpellBook::forgetSpell(const string & spell)
 {
-	this->spl.erase(spell);
+    map<string, ASpell*>::iterator it = spl.find(spell);
+    if (it != spl.end())
+    {
+        delete it->second;
+        spl.erase(spell);          
+    }          
 }
 
-ASpell * SpellBook::createSpell( const std::string & spell )
+ASpell * SpellBook::createSpell(string const & spell)
 {
-	std::map<std::string, ASpell *>::iterator it = spl.find(spell);
-	if ( it != spl.end())
-		return it->second;
+    map<string, ASpell*>::iterator it = spl.find(spell);
+    if (it != spl.end())
+    	return it->second;
 	return NULL;
 }

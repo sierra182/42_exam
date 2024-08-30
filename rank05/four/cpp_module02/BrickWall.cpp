@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BrickWall.cpp                                      :+:      :+:    :+:   */
+/*   BrickWall::BrickWall.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: svidot <svidot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 11:05:19 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/22 12:36:21 by seblin           ###   ########.fr       */
+/*   Created: 2024/08/23 18:37:18 by svidot            #+#    #+#             */
+/*   Updated: 2024/08/23 18:37:36 by svidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BrickWall.hpp"
-
-BrickWall::BrickWall()
-: ATarget("Inconspicuous Red-brick Wall")
+    
+BrickWall::BrickWall(): ATarget("Inconspicuous Red-brick Wall")
 {}
-
 BrickWall::~BrickWall(){}
-
 ATarget * BrickWall::clone() const
 {
-	return new BrickWall;
-}	
+    return new BrickWall;
+}

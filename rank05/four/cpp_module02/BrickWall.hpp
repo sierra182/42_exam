@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BrickWall.hpp                                          :+:      :+:    :+:   */
+/*   BrickWall.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: svidot <svidot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 11:02:54 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/22 11:05:08 by seblin           ###   ########.fr       */
+/*   Created: 2024/08/23 18:35:23 by svidot            #+#    #+#             */
+/*   Updated: 2024/08/23 18:37:03 by svidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include <iostream>
 #include "ATarget.hpp"
+using namespace std;
 
-class BrickWall : public ATarget
+class BrickWall : public ATarget 
 {
-	public:
-	
-	BrickWall();
-	~BrickWall();
-	virtual ATarget * clone() const;	
+    public: 
+    
+    BrickWall();
+    ~BrickWall();
+    ATarget * clone() const;
 };

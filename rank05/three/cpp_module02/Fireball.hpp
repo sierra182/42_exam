@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fwoosh.hpp                                         :+:      :+:    :+:   */
+/*   Fireball.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svidot <svidot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 18:35:23 by svidot            #+#    #+#             */
-/*   Updated: 2024/08/23 18:37:03 by svidot           ###   ########.fr       */
+/*   Created: 2024/08/22 11:02:54 by seblin            #+#    #+#             */
+/*   Updated: 2024/08/22 11:04:34 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
 #include "ASpell.hpp"
-using namespace std;
 
-class Fwoosh : public ASpell 
+class Fireball : public ASpell
 {
-    public: 
-    
-    Fwoosh();
-    ~Fwoosh();
-    ASpell * clone() const;
+	public:
+	
+	Fireball();
+	~Fireball();
+	virtual ASpell * clone() const;	
 };

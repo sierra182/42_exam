@@ -3,31 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   TargetGenerator.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: svidot <svidot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 09:46:54 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/22 11:16:38 by seblin           ###   ########.fr       */
+/*   Created: 2024/08/23 17:53:22 by svidot            #+#    #+#             */
+/*   Updated: 2024/08/23 18:52:45 by svidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+using namespace std;
+
 #include <map>
+#include <utility>
 #include "ATarget.hpp"
 
 class TargetGenerator
 {
-	std::map<std::string, ATarget *> spl;
+    map<string, ATarget*> spl;
+        
+    TargetGenerator(const TargetGenerator &);
+    TargetGenerator & operator=(const TargetGenerator &);
+    
+    public:
 
-	TargetGenerator( const TargetGenerator & src );
-	TargetGenerator & operator=( const TargetGenerator & rhs );
-	
-	public:
-	
-	TargetGenerator();
-	~TargetGenerator();
-
-	void learnTargetType( ATarget * spell );
-	void forgetTargetType( const std::string & spell );
-	ATarget * createTarget( const std::string & spell );
+    TargetGenerator();
+    ~TargetGenerator();
+    
+    void learnTargetType(ATarget * spell);
+    void forgetTargetType(const string & spell);
+    ATarget * createTarget(const string & spell); 
 };

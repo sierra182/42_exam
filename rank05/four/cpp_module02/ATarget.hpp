@@ -3,34 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ATarget.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: svidot <svidot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 10:10:38 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/22 13:13:33 by seblin           ###   ########.fr       */
+/*   Created: 2024/08/23 17:53:22 by svidot            #+#    #+#             */
+/*   Updated: 2024/08/23 18:29:58 by svidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+using namespace std;
 
 class ASpell;
 class ATarget
 {
-	protected:
-	
-	std::string type;
-	
-	public:
-	
-	ATarget();
-	ATarget( const ATarget & src );
-	ATarget & operator=( const ATarget & rhs );
-	virtual ~ATarget();
-	
-	ATarget( const std::string & _type );
-	const std::string & getType() const;
+    string type;
+        
+    public:
+    
+    ATarget();
+    ATarget(const ATarget &);
+    ATarget & operator=(const ATarget &);
+    
+    ATarget( const string & type);
+    virtual ~ATarget();
 
-	virtual ATarget * clone() const = 0;
-	
-	void getHitBySpell( const ASpell & spell ) const;
+    const string & getType() const;
+        
+    virtual ATarget * clone() const = 0;
+    void getHitBySpell(const ASpell & spell) const; 
 };

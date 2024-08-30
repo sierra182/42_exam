@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fwoosh::Fwoosh.cpp                                         :+:      :+:    :+:   */
+/*   BrickWall.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svidot <svidot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 18:37:18 by svidot            #+#    #+#             */
-/*   Updated: 2024/08/23 18:37:36 by svidot           ###   ########.fr       */
+/*   Created: 2024/08/22 11:02:54 by seblin            #+#    #+#             */
+/*   Updated: 2024/08/22 11:05:08 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fwoosh.hpp"
-    
-Fwoosh::Fwoosh(): ASpell("Fwoosh", "fwooshed")
-{}
-Fwoosh::~Fwoosh(){}
-ASpell * Fwoosh::clone() const
+#pragma once
+#include "ATarget.hpp"
+
+class BrickWall : public ATarget
 {
-    return new Fwoosh;
-}
+	public:
+	
+	BrickWall();
+	~BrickWall();
+	virtual ATarget * clone() const;	
+};

@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dummy::Dummy.cpp                                         :+:      :+:    :+:   */
+/*   Dummy.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svidot <svidot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 18:37:18 by svidot            #+#    #+#             */
-/*   Updated: 2024/08/23 18:37:36 by svidot           ###   ########.fr       */
+/*   Created: 2024/08/22 11:02:54 by seblin            #+#    #+#             */
+/*   Updated: 2024/08/22 11:05:08 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dummy.hpp"
-    
-Dummy::Dummy(): ATarget("Target Practice Dummy")
-{}
-Dummy::~Dummy(){}
-ATarget * Dummy::clone() const
+#pragma once
+#include "ATarget.hpp"
+
+class Dummy : public ATarget
 {
-    return new Dummy;
-}
+	public:
+	
+	Dummy();
+	~Dummy();
+	virtual ATarget * clone() const;	
+};

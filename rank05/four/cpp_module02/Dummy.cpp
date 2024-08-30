@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dummy.cpp                                          :+:      :+:    :+:   */
+/*   Dummy::Dummy.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: svidot <svidot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 11:05:19 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/22 11:09:31 by seblin           ###   ########.fr       */
+/*   Created: 2024/08/23 18:37:18 by svidot            #+#    #+#             */
+/*   Updated: 2024/08/23 18:37:36 by svidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dummy.hpp"
-
-Dummy::Dummy()
-: ATarget("Target Practice Dummy")
+    
+Dummy::Dummy(): ATarget("Target Practice Dummy")
 {}
-
 Dummy::~Dummy(){}
-
 ATarget * Dummy::clone() const
 {
-	return new Dummy;
-}	
+    return new Dummy;
+}

@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   Fireball.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: svidot <svidot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 11:02:54 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/22 11:04:34 by seblin           ###   ########.fr       */
+/*   Created: 2024/08/23 18:35:23 by svidot            #+#    #+#             */
+/*   Updated: 2024/08/23 18:37:03 by svidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include <iostream>
 #include "ASpell.hpp"
+using namespace std;
 
-class Fireball : public ASpell
+class Fireball : public ASpell 
 {
-	public:
-	
-	Fireball();
-	~Fireball();
-	virtual ASpell * clone() const;	
+    public: 
+    
+    Fireball();
+    ~Fireball();
+    ASpell * clone() const;
 };

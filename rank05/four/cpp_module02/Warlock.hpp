@@ -5,40 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 09:46:54 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/22 12:47:07 by seblin           ###   ########.fr       */
+/*   Created: 2024/08/23 17:53:22 by svidot            #+#    #+#             */
+/*   Updated: 2024/08/24 06:40:45 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-#include <map>
-#include "ASpell.hpp"
+using namespace std;
+
 #include "SpellBook.hpp"
+#include "ASpell.hpp"
 
 class Warlock
 {
-	SpellBook spl;
-	
-	std::string name;
-	std::string title;
+    SpellBook sb;
+    
+    string name;
+    string title;
+    
+    Warlock();
+    Warlock(const Warlock &);
+    Warlock & operator=(const Warlock &);
+    
+    public:
+    
+    Warlock( const string  & name, const string & title);
+    ~Warlock();
 
-	Warlock();
-	Warlock( const Warlock & src );
-	Warlock & operator=( const Warlock & rhs );
-	
-	public:
-	
-	Warlock( const std::string & name, const std::string & title );
-	~Warlock();
-
-	const std::string & getName() const; 
-	const std::string & getTitle() const; 
-
-	void setTitle( const std::string & title );
-	void introduce() const;
-
-	void learnSpell( ASpell * spell );
-	void forgetSpell( std::string spell );
-	void launchSpell( std::string spell, const ATarget & target);
+    const string & getName() const;
+    const string & getTitle() const;
+    void setTitle(const string & title);
+    void introduce() const;
+    
+    void learnSpell(ASpell * spell);
+    void forgetSpell(string spell);
+    void launchSpell(string spell, const ATarget & target); 
 };

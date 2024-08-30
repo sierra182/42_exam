@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   Warlock.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svidot <svidot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 17:53:22 by svidot            #+#    #+#             */
-/*   Updated: 2024/08/23 17:58:51 by svidot           ###   ########.fr       */
+/*   Created: 2024/08/22 09:46:54 by seblin            #+#    #+#             */
+/*   Updated: 2024/08/22 10:03:43 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-using namespace std;
 
 class Warlock
 {
-    string name;
-    string title;
-    
-    Warlock();
-    Warlock(const Warlock &);
-    Warlock & operator=(const Warlock &);
-    
-    public:
-    
-    Warlock( const string  & name, const string & title);
-    ~Warlock();
+	std::string name;
+	std::string title;
 
-    const string & getName() const;
-    const string & getTitle() const;
-    void setTitle(const string & title);
-    void introduce() const; 
+	Warlock();
+	Warlock( const Warlock & src );
+	Warlock & operator=( const Warlock & rhs );
+	
+	public:
+	
+	Warlock( const std::string & name, const std::string & title );
+	~Warlock();
+
+	const std::string & getName() const; 
+	const std::string & getTitle() const; 
+
+	void setTitle( const std::string & title );
+	void introduce() const;
 };

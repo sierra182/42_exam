@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seblin <seblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 09:55:46 by seblin            #+#    #+#             */
-/*   Updated: 2024/08/22 11:20:33 by seblin           ###   ########.fr       */
+/*   Created: 2024/08/23 18:08:02 by svidot            #+#    #+#             */
+/*   Updated: 2024/08/24 05:50:18 by seblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Warlock.hpp"
 #include "Fwoosh.hpp"
 #include "Dummy.hpp"
-
 int main()
 {
   Warlock richard("Richard", "the Titled");
